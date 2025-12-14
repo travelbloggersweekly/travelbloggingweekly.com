@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex,follow" />
+  <!-- Optional 1s UX pause; set to 0 for instant -->
+  <meta http-equiv="refresh" content="0;url=https://www.awesomelists.io/">
+  <link rel="canonical" href="https://www.awesomelists.io/">
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;display:grid;place-items:center;min-height:100vh}
+    .wrap{max-width:560px;padding:24px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>We’ve moved to AwesomeLists.io</h1>
+    <p>Sending you to the new home… If nothing happens, <a id="fallback" href="https://www.awesomelists.io/">click here</a>.</p>
+  </div>
+  <script>
+    (function() {
+      try {
+        var dest = new URL(window.location.href);
+        dest.protocol = "https:";
+        dest.hostname = "www.awesomelists.io";
+        // Use replace() so the old URL isn't kept in history
+        window.location.replace(dest.toString());
+        // Fallback link mirrors full destination
+        document.getElementById('fallback').setAttribute('href', dest.toString());
+      } catch (e) {
+        // If URL API fails for some reason, fall back to the homepage
+        window.location.replace("https://www.awesomelists.io/");
+      }
+    })();
+  </script>
+</body>
+</html>
